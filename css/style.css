@@ -68,13 +68,13 @@ body {
 }
 
 .logo img {
-    height: 40px;
+    height: 70px;
     display: block;
 }
 
 .logo h1 {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 200;
     color: var(--bg-white);
     margin: 0;
 }
