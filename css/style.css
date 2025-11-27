@@ -135,19 +135,16 @@ body {
 .hero {
     margin-top: 64px;
     padding: 100px 0;
-    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
-    /* 背景画像を追加する場合は、以下のコメントを解除して画像パスを設定 */
-    /* background-image: url('../images/hero-bg.jpg'); */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    /* 画像の上にオーバーレイを追加する場合 */
-    /* background-blend-mode: overlay; */
+    background-image: url('../images/fv_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
     position: relative;
 }
 
-/* 背景画像のオーバーレイ（必要に応じて使用）
+/* 背景画像のオーバーレイ（一時的に無効化）*/
+/*
 .hero::before {
     content: '';
     position: absolute;
@@ -291,6 +288,7 @@ body {
     margin-bottom: 20px;
     padding-bottom: 15px;
     border-bottom: 2px solid var(--bg-gray);
+    text-align: center;
 }
 
 .business-item-text {
