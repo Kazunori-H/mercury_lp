@@ -3,13 +3,14 @@
 # HTTPSリダイレクト設定
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /
 
-    # HTTPからHTTPSへリダイレクト
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-    # wwwありをwwwなしにリダイレクト
+    # wwwありの場合、HTTPSかつwwwなしにリダイレクト（優先処理）
     RewriteCond %{HTTP_HOST} ^www\.mercuryjpn\.com [NC]
+    RewriteRule ^(.*)$ https://mercuryjpn.com/$1 [L,R=301]
+
+    # HTTPの場合、HTTPSにリダイレクト（wwwなしドメインのみ）
+    RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://mercuryjpn.com/$1 [L,R=301]
 </IfModule>
 
