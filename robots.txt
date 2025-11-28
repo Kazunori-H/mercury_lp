@@ -4,4 +4,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.mercuryjpn.com/sitemap.xml
+Sitemap: https://mercuryjpn.com/sitemap.xml
