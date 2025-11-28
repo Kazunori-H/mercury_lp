@@ -5,11 +5,7 @@
     RewriteEngine On
     RewriteBase /
 
-    # wwwありの場合、HTTPSかつwwwなしにリダイレクト（優先処理）
-    RewriteCond %{HTTP_HOST} ^www\.mercuryjpn\.com [NC]
-    RewriteRule ^(.*)$ https://mercuryjpn.com/$1 [L,R=301]
-
-    # HTTPの場合、HTTPSにリダイレクト（wwwなしドメインのみ）
+    # HTTPの場合、HTTPSにリダイレクト
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://mercuryjpn.com/$1 [L,R=301]
 </IfModule>
