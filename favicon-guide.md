@@ -4,22 +4,25 @@
 
 以下のfaviconファイルを`images/`ディレクトリに配置してください。
 
-### 必須ファイル
+### 必須ファイル（✅ 配置済み）
 
-1. **favicon-16x16.png** (16x16px)
-   - ブラウザタブ用の小サイズアイコン
+1. **favicon.ico** (マルチサイズ)
+   - 従来のブラウザ用アイコン ✅
 
-2. **favicon-32x32.png** (32x32px)
-   - ブラウザタブ用の標準サイズアイコン
+2. **favicon.svg** (SVGベクター形式)
+   - モダンブラウザ用のスケーラブルアイコン ✅
 
-3. **apple-touch-icon.png** (180x180px)
-   - iOSデバイスのホーム画面用アイコン
+3. **favicon-96x96.png** (96x96px)
+   - 高解像度ディスプレイ用PNG ✅
 
-4. **android-chrome-192x192.png** (192x192px)
-   - Androidデバイス用アイコン（小）
+4. **apple-touch-icon.png** (180x180px)
+   - iOSデバイスのホーム画面用アイコン ✅
 
-5. **android-chrome-512x512.png** (512x512px)
-   - Androidデバイス用アイコン（大）
+5. **android-chrome-192x192.png** (192x192px)
+   - Androidデバイス用アイコン（小） ✅
+
+6. **android-chrome-512x512.png** (512x512px)
+   - Androidデバイス用アイコン（大） ✅
 
 ## ファイル生成方法
 
@@ -44,8 +47,9 @@
 ```
 mercury_lp/
 └── images/
-    ├── favicon-16x16.png
-    ├── favicon-32x32.png
+    ├── favicon.ico
+    ├── favicon.svg
+    ├── favicon-96x96.png
     ├── apple-touch-icon.png
     ├── android-chrome-192x192.png
     └── android-chrome-512x512.png
