@@ -1,0 +1,7 @@
+# robots.txt for Mercury Co., Ltd.
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.mercuryjpn.com/sitemap.xml

@@ -78,7 +78,11 @@
 - **CSS**: 外部スタイルシート (`css/style.css`) - ✅ 実装済み
 - **JavaScript**: 外部スクリプト (`js/script.js`) - ✅ 実装済み
 - **フォント**: Google Fonts - Noto Sans JP (400, 500, 700)
-- **Favicon**: `images/favicon.png` - ✅ 設定済み
+- **Favicon**: 複数サイズ対応 - ✅ 設定済み
+  - favicon-16x16.png, favicon-32x32.png
+  - apple-touch-icon.png
+  - android-chrome (192x192, 512x512)
+  - site.webmanifest（PWA対応）
 
 ### カラースキーム
 - **プライマリカラー**: #FF6B35 (オレンジ)
@@ -100,10 +104,18 @@
 - `pc-only`クラスでPC/モバイル表示切り替え
 
 ### SEO/OGP設定
-- メタディスクリプション設定済み
-- OGPタグ設定済み（URL未設定）
-- 適切なセマンティックマークアップ
-- スムーススクロール実装
+- ✅ メタディスクリプション設定済み
+- ✅ OGPタグ完全実装（og:url, og:image, og:site_name, og:locale）
+- ✅ Twitterカード設定
+- ✅ Canonical URL設定
+- ✅ 構造化データ（schema.org）実装
+  - Organization（組織情報）
+  - WebSite（Webサイト情報）
+  - LocalBusiness（ローカルビジネス情報）
+- ✅ sitemap.xml作成・配置
+- ✅ robots.txt作成・配置
+- ✅ 適切なセマンティックマークアップ
+- ✅ スムーススクロール実装
 
 ### アクセシビリティ
 - `aria-label`の使用（ハンバーガーメニュー）
@@ -128,6 +140,28 @@
 - ✅ スムーススクロール機能
 - ✅ メニュークリック時の自動クローズ
 - ✅ スクロール時のヘッダースタイル変更
+
+### サーバー設定（.htaccess）
+- ✅ HTTPSリダイレクト設定
+- ✅ セキュリティヘッダー設定
+  - X-Frame-Options（クリックジャッキング対策）
+  - X-Content-Type-Options（MIMEスニッフィング対策）
+  - X-XSS-Protection（XSS対策）
+  - Referrer-Policy
+  - Permissions-Policy
+  - Content-Security-Policy（CSP）
+- ✅ Gzip圧縮設定（パフォーマンス向上）
+- ✅ ブラウザキャッシュ設定
+- ✅ 404エラーページ設定
+
+### エラーページ
+- ✅ 404.html作成（デザイン統一）
+
+### テストガイドドキュメント
+- ✅ favicon-guide.md - Favicon作成・設定ガイド
+- ✅ performance-test-guide.md - パフォーマンステストガイド
+- ✅ mobile-test-guide.md - モバイルフレンドリーテストガイド
+- ✅ browser-test-guide.md - クロスブラウザテストガイド
 
 ### 画像アセット
 - ✅ `images/fv_background.jpg` - ヒーロー背景画像
@@ -181,12 +215,29 @@
 ## 未確定事項・要更新事項
 
 ### 会社情報
-- [ ] 設立年月
-- [ ] 資本金
+- [ ] 設立年月（現在: 2007年11月）
+- [ ] 資本金（現在: 50万円）
 
-### その他
-- [ ] OGP画像の設定
-- [ ] 公開URL（OGPタグに設定）
+### Favicon画像
+- [ ] 各サイズのfavicon画像を生成・配置
+  - favicon-16x16.png
+  - favicon-32x32.png
+  - apple-touch-icon.png (180x180)
+  - android-chrome-192x192.png
+  - android-chrome-512x512.png
+  - 詳細は `favicon-guide.md` を参照
+
+### SEO/公開後タスク
+- [x] OGP画像の設定（ロゴ画像を使用）
+- [x] 公開URL（OGPタグに設定）
+- [x] sitemap.xml、robots.txtの作成
+- [x] 構造化データの実装
+- [ ] Google Search Consoleへの登録とサイトマップ送信（手動作業）
+- [ ] パフォーマンステストの実施（手動作業、ガイド作成済み）
+- [ ] モバイルフレンドリーテストの実施（手動作業、ガイド作成済み）
+- [ ] クロスブラウザテストの実施（手動作業、ガイド作成済み）
+
+### オプション
 - [ ] Google Analyticsなどのトラッキングコード（必要に応じて）
 
 ## 今後の拡張可能性
@@ -198,8 +249,28 @@
 - [ ] 採用情報セクション
 - [ ] 多言語対応（英語版）
 
+## 公開後の設定・運用
+
+### セキュリティとパフォーマンス
+- .htaccessによる設定が有効化されていることを確認
+- HTTPSが正しく動作し、HTTPからリダイレクトされることを確認
+- セキュリティヘッダーが適切に送信されていることを確認
+
+### テスト実施（各ガイド参照）
+1. パフォーマンステスト（PageSpeed Insights等）
+2. モバイルフレンドリーテスト
+3. クロスブラウザテスト（Chrome、Safari、Edge、Firefox）
+
+### 定期メンテナンス
+- サイトマップの更新（新規ページ追加時）
+- パフォーマンスの定期確認（月1回推奨）
+- セキュリティアップデート（必要に応じて）
+
 ## バージョン管理
 
 - **リポジトリ**: https://github.com/Kazunori-H/mercury_lp
 - **ブランチ**: master
-- **最終更新**: 2024年11月27日
+- **最終更新**: 2025年11月28日
+- **主要アップデート**:
+  - 2025-11-28: SEO/OGP完全実装、セキュリティ設定、テストガイド作成
+  - 2024-11-27: 初期実装完了
