@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // ========================================
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const nav = document.querySelector('.nav');
 
-    if (navToggle && navMenu) {
+    if (navToggle && navMenu && nav) {
         // ハンバーガーメニューのクリックイベント
         navToggle.addEventListener('click', function() {
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            nav.classList.toggle('active');
         });
 
         // メニュー内のリンクをクリックしたらメニューを閉じる
@@ -22,10 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
+                nav.classList.remove('active');
             });
         });
 
-        // メニュー外をクリックしたらメニューを閉じる
+        // メニュー外（オーバーレイ）をクリックしたらメニューを閉じる
         document.addEventListener('click', function(event) {
             const isClickInsideNav = navMenu.contains(event.target);
             const isClickOnToggle = navToggle.contains(event.target);
@@ -33,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
+                nav.classList.remove('active');
             }
         });
     }
