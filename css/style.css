@@ -362,11 +362,15 @@ body {
 }
 
 .contact-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
+}
+
+.contact-info .contact-item {
+    max-width: 450px;
 }
 
 .contact-item {
